@@ -1,0 +1,31 @@
+# PAYBAACK.
+
+> PAYBAACK is a human-reviewed, AI-assisted accounts-receivable desk for overdue, undisputed B2B invoices.
+
+## What PAYBAACK does
+
+- Starts with one authorized late B2B invoice; no ERP integration is required for the private beta.
+- Prepares and tracks polite, approved payment follow-ups.
+- Logs outreach, responses, payment promises, and next actions.
+- Escalates disputes, legal issues, missing facts, changed amounts, and requests to stop contact to the creditor.
+
+## What PAYBAACK does not do
+
+- It is not a law firm, debt buyer, or consumer-debt collector.
+- It does not give legal advice, threaten debtors, invent facts, negotiate disputes autonomously, or process card/bank credentials.
+- It does not claim collection results until they are verified by the customer.
+
+## Best fit
+
+US B2B service businesses with an overdue invoice that has a clear balance, named customer contact, payment path, and no active dispute. Initial focus: marketing and creative agencies with 5–30 employees.
+
+## Private-beta intake
+
+Provide: creditor legal name, invoice number and balance, due date, debtor contact, payment link/instructions owned by the creditor, relevant documents, known context, and express authorization for contact.
+
+Do not provide bank credentials, card numbers, or sensitive personal information in an initial request.
+
+## Pages
+
+- [Landing page](https://paybaack.com/): product overview and private-beta request.
+- [Agent-readable status](https://paybaack.com/agent.json): capabilities and current limitations.

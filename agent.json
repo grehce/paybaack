@@ -1,0 +1,12 @@
+{
+  "name": "PAYBAACK",
+  "description": "Human-reviewed, AI-assisted follow-up for authorized overdue B2B invoices.",
+  "version": "0.1.0-private-beta",
+  "homepage": "https://paybaack.com/",
+  "llms_txt": "https://paybaack.com/llms.txt",
+  "intake": {"type":"human_review_required","url":"https://paybaack.com/#submit","required_fields":["creditor legal name","invoice number","balance due","due date","debtor business contact","payment path","authorization to contact"]},
+  "capabilities": ["approved email follow-up","response and payment-promise tracking","exception escalation","progress visibility"],
+  "limitations": ["no consumer debt","no legal advice","no autonomous dispute negotiation","no payment-card or bank-credential handling","no unverified collection claims"],
+  "status": "private_beta",
+  "contact": "grehce+paybaackdemo@gmail.com"
+}
