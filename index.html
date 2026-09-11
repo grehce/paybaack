@@ -27,6 +27,13 @@
   (() => {
     const upload = document.querySelector('label.upload');
     const input = document.querySelector('#invoice');
+    const reason = document.querySelector('#reason');
+    if (reason) {
+      reason.name = 'why this invoice was selected';
+      reason.placeholder = 'Highest value, oldest overdue balance, low-sensitivity relationship, or a good first test.';
+      const reasonLabel = reason.previousElementSibling;
+      if (reasonLabel?.firstChild) reasonLabel.firstChild.nodeValue = 'Why did you choose this invoice? ';
+    }
     if (!upload || !input) return;
     const render = (file) => {
       if (!file) return;
