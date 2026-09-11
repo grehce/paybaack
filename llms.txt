@@ -28,4 +28,5 @@ Do not provide bank credentials, card numbers, or sensitive personal information
 ## Pages
 
 - [Landing page](https://paybaack.com/): product overview and private-beta request.
+- [AP agent experiment](https://paybaack.com/ap.html): an early concept for accounts-payable teams to receive, route, and answer vendor invoices. It does not make payment decisions or change vendor payment details.
 - [Agent-readable status](https://paybaack.com/agent.json): capabilities and current limitations.
