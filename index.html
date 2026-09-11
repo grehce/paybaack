@@ -51,6 +51,14 @@
       if (paymentLabel?.firstChild) paymentLabel.firstChild.nodeValue = 'How should this customer pay? ';
       payment.placeholder = 'Payment portal URL, or “use payment details on invoice”';
     }
+    const context = document.querySelector('#context');
+    if (context) {
+      context.placeholder = 'Preferred contact, prior follow-up, relationship context, or anyone not to contact.';
+      const privacyNote = document.createElement('p');
+      privacyNote.textContent = 'Internal notes only - we will not disclose them to the vendor.';
+      privacyNote.style.cssText = 'margin:-9px 0 17px;color:#aaa;font-size:12px;line-height:1.35';
+      context.insertAdjacentElement('afterend', privacyNote);
+    }
     if (!upload || !input) return;
     const setExtraction = (message) => { extraction.textContent = message; extraction.style.display = 'block'; };
     const parsePdf = async (file) => {
