@@ -36,10 +36,20 @@
     upload.insertAdjacentElement('afterend', extraction);
     const reason = document.querySelector('#reason');
     if (reason) {
-      reason.name = 'why this invoice was selected';
-      reason.placeholder = 'Highest value, oldest overdue balance, low-sensitivity relationship, or a good first test.';
       const reasonLabel = reason.previousElementSibling;
       if (reasonLabel?.firstChild) reasonLabel.firstChild.nodeValue = 'Why did you choose this invoice? ';
+      const select = document.createElement('select');
+      select.id = 'reason'; select.name = 'why this invoice was selected'; select.style.cssText = 'width:100%;padding:15px 14px;border:0;border-radius:9px;margin-bottom:17px;font:inherit;background:#fff;color:#111';
+      [['', 'Select a reason (optional)'], ['Highest value', 'Highest value'], ['Oldest overdue invoice', 'Oldest overdue invoice'], ['Low-sensitivity relationship', 'Low-sensitivity relationship'], ['Good first test', 'Good first test'], ['Other', 'Other - tell us below']].forEach(([value, label]) => { const option = new Option(label, value); select.add(option); });
+      const customLabel = document.createElement('label'); customLabel.htmlFor = 'custom-reason'; customLabel.textContent = 'Tell us why'; customLabel.style.display = 'none';
+      const custom = document.createElement('textarea'); custom.id = 'custom-reason'; custom.name = 'custom selection rationale'; custom.placeholder = 'Your reason for starting with this invoice'; custom.style.display = 'none';
+      select.addEventListener('change', () => { const show = select.value === 'Other'; customLabel.style.display = show ? 'block' : 'none'; custom.style.display = show ? 'block' : 'none'; });
+      reason.replaceWith(select); select.insertAdjacentElement('afterend', customLabel); customLabel.insertAdjacentElement('afterend', custom);
+    }
+    if (payment) {
+      const paymentLabel = payment.previousElementSibling;
+      if (paymentLabel?.firstChild) paymentLabel.firstChild.nodeValue = 'How should this customer pay? ';
+      payment.placeholder = 'Payment portal URL, or “use payment details on invoice”';
     }
     if (!upload || !input) return;
     const setExtraction = (message) => { extraction.textContent = message; extraction.style.display = 'block'; };
@@ -57,11 +67,12 @@
         const invoiceNumber = text.match(/invoice\s*(?:number|#)\s*\n?\s*([^\n]+)/i)?.[1]?.trim();
         const dueDate = text.match(/due\s*date\s*\n?\s*([^\n]+)/i)?.[1]?.trim();
         const amount = text.match(/total\s*due\s*\n?\s*(\$[\d,.]+)/i)?.[1];
+        const billToBlock = billTo >= 0 ? lines.slice(billTo + 1, billTo + 14).join(' ') : '';
+        const apEmail = billToBlock.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i)?.[0];
         if (customer && company && !company.value) company.value = customer;
-        const details = [customer && `Customer: ${customer}`, invoiceNumber && `Invoice: ${invoiceNumber}`, amount && `Amount: ${amount}`, dueDate && `Due: ${dueDate}`].filter(Boolean);
+        if (apEmail && contact && !contact.value) contact.value = apEmail;
+        const details = [customer && `Customer: ${customer}`, apEmail && `AP email: ${apEmail}`, invoiceNumber && `Invoice: ${invoiceNumber}`, amount && `Amount: ${amount}`, dueDate && `Due: ${dueDate}`].filter(Boolean);
         setExtraction(details.length ? `Found ${details.join(' · ')}. Please review the customer, contact, and payment fields before submitting.` : 'PDF selected. We could not reliably read its invoice fields, so please complete the form manually.');
-        if (contact) contact.focus();
-        if (payment && !payment.value) payment.placeholder = 'Required - not taken from the invoice automatically';
       } catch {
         setExtraction('PDF selected. We could not read its invoice fields, so please complete the form manually.');
       }
