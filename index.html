@@ -39,11 +39,11 @@
       const reasonLabel = reason.previousElementSibling;
       if (reasonLabel?.firstChild) reasonLabel.firstChild.nodeValue = 'Why did you choose this invoice? ';
       const select = document.createElement('select');
-      select.id = 'reason'; select.name = 'why this invoice was selected'; select.style.cssText = 'display:block;width:100%;height:52px;box-sizing:border-box;padding:0 14px;border:0;border-radius:9px;margin-bottom:17px;font:inherit;background:#fff;color:#111';
-      [['', 'Select a reason (optional)'], ['Highest value', 'Highest value'], ['Oldest overdue invoice', 'Oldest overdue invoice'], ['Low-sensitivity relationship', 'Low-sensitivity relationship'], ['Good first test', 'Good first test'], ['Other', 'Other - tell us below']].forEach(([value, label]) => { const option = new Option(label, value); select.add(option); });
+      select.id = 'reason'; select.name = 'why this invoice was selected'; select.style.cssText = 'display:block;width:100%;height:52px;box-sizing:border-box;padding:0 14px;border:0;border-radius:9px;margin-bottom:17px;font:inherit;background:#fff;color:#6b685f';
+      [['', 'Select a reason'], ['Highest value', 'Highest value'], ['Oldest overdue invoice', 'Oldest overdue invoice'], ['Low-sensitivity relationship', 'Low-sensitivity relationship'], ['Good first test', 'Good first test'], ['Other', 'Other - tell us below']].forEach(([value, label]) => { const option = new Option(label, value); select.add(option); });
       const customLabel = document.createElement('label'); customLabel.htmlFor = 'custom-reason'; customLabel.textContent = 'Tell us why'; customLabel.style.display = 'none';
       const custom = document.createElement('textarea'); custom.id = 'custom-reason'; custom.name = 'custom selection rationale'; custom.placeholder = 'Your reason for starting with this invoice'; custom.style.display = 'none';
-      select.addEventListener('change', () => { const show = select.value === 'Other'; customLabel.style.display = show ? 'block' : 'none'; custom.style.display = show ? 'block' : 'none'; });
+      select.addEventListener('change', () => { const show = select.value === 'Other'; select.style.color = select.value ? '#111' : '#6b685f'; customLabel.style.display = show ? 'block' : 'none'; custom.style.display = show ? 'block' : 'none'; });
       reason.replaceWith(select); select.insertAdjacentElement('afterend', customLabel); customLabel.insertAdjacentElement('afterend', custom);
     }
     if (payment) {
