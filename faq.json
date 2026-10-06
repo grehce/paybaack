@@ -1,0 +1,81 @@
+{
+  "_readme": "Grace's chat agent answers ONLY from this file. Edit, add, or delete entries and push; the bot picks up changes within ~5 minutes, with no redeploy. Keep each answer self-contained and factual. alt_phrasings is optional but improves matching. Entries below are DRAFTS pulled from existing site copy (llms.txt / agent.json) - replace them with your real FAQ.",
+  "contact": {
+    "general": "hello@paybaack.com",
+    "disputes": "disputes@paybaack.com"
+  },
+  "entries": [
+    {
+      "id": "what-is-paybaack",
+      "question": "What is PAYBAACK?",
+      "alt_phrasings": ["what do you do", "who are you", "what is this"],
+      "answer": "PAYBAACK is a human-reviewed, AI-assisted accounts-receivable desk for overdue, undisputed B2B invoices. You submit a late invoice, our workflow prepares polite payment follow-ups, a human reviews every outbound message during the private beta, and you can see each step until the invoice is paid or needs your decision."
+    },
+    {
+      "id": "how-it-works",
+      "question": "How does it work?",
+      "alt_phrasings": ["what happens after I submit", "walk me through the process", "how does the beta work"],
+      "answer": "Start with one authorized, undisputed overdue B2B invoice. We extract the invoice number, amount, and due date from the file and ask only for what we need to follow up safely. We prepare and track approved payment follow-ups, log outreach, responses, payment promises, and next actions, and escalate anything that needs your call back to you."
+    },
+    {
+      "id": "who-is-it-for",
+      "question": "Who is PAYBAACK for?",
+      "alt_phrasings": ["is this right for my business", "best fit", "what kind of companies"],
+      "answer": "The best fit is a US B2B service business with an overdue invoice that has a clear balance, a named customer contact, a payment path, and no active dispute. Our initial focus is marketing and creative agencies with 5 to 30 employees."
+    },
+    {
+      "id": "consumer-debt",
+      "question": "Do you collect consumer debt?",
+      "alt_phrasings": ["personal debt", "can you collect from an individual", "are you a debt collector", "are you a law firm"],
+      "answer": "No. PAYBAACK only handles business-to-business invoices. We are not a law firm, a debt buyer, or a consumer-debt collector."
+    },
+    {
+      "id": "legal-advice",
+      "question": "Can you give legal advice or take legal action?",
+      "alt_phrasings": ["can you sue", "send a demand letter", "legal options"],
+      "answer": "No. PAYBAACK does not give legal advice and does not threaten debtors. Legal questions or issues are escalated back to you, the creditor, to handle with your own counsel."
+    },
+    {
+      "id": "disputed-invoices",
+      "question": "What if the invoice is disputed?",
+      "alt_phrasings": ["customer disagrees with the invoice", "they say they don't owe it", "negotiate"],
+      "answer": "PAYBAACK only follows up on invoices that are authorized, valid, and not currently disputed. If a dispute, a changed amount, or a request to stop contact comes up, we escalate it to you. We don't negotiate disputes on your behalf."
+    },
+    {
+      "id": "what-to-submit",
+      "question": "What do I need to submit?",
+      "alt_phrasings": ["what information do you need", "how do I get started", "requirements"],
+      "answer": "Provide your company's legal name, the invoice number and balance, the due date, the debtor's business contact, a payment link or payment instructions that you own, any relevant documents or context, and your express authorization for us to contact the customer. You can start from the form on the homepage."
+    },
+    {
+      "id": "erp-integration",
+      "question": "Do I need to integrate my accounting system or ERP?",
+      "alt_phrasings": ["quickbooks", "netsuite", "integration", "setup time"],
+      "answer": "No. The private beta doesn't require an ERP or accounting-system integration. You start with one invoice."
+    },
+    {
+      "id": "human-review",
+      "question": "Is a human involved, or is it fully automated?",
+      "alt_phrasings": ["is this a bot", "who sends the emails", "AI only"],
+      "answer": "During the private beta, a human reviews every outbound message before it is sent. AI helps prepare the follow-ups; it doesn't send them unreviewed."
+    },
+    {
+      "id": "sensitive-info",
+      "question": "Should I send bank or card details?",
+      "alt_phrasings": ["is my data safe", "security", "bank credentials", "credit card"],
+      "answer": "Please don't. PAYBAACK does not handle payment-card numbers or bank credentials, so don't include them or other sensitive personal information in a request. Payments go through your own payment link or instructions."
+    },
+    {
+      "id": "results",
+      "question": "What results have you gotten?",
+      "alt_phrasings": ["success rate", "how much have you collected", "case studies", "does it work"],
+      "answer": "We don't publish collection results until customers have verified them. The beta is new, so verified numbers aren't available yet."
+    },
+    {
+      "id": "ap-teams",
+      "question": "Do you have anything for accounts-payable teams?",
+      "alt_phrasings": ["AP agent", "vendor invoices", "I pay invoices"],
+      "answer": "There's an early AP agent experiment for accounts-payable teams to receive, route, and answer vendor invoices; see the \"For AP teams\" page. It does not make payment decisions or change vendor payment details."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+name = "paybaack-grace"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+FAQ_URL = "https://paybaack.com/faq.json"
+ALLOWED_ORIGINS = "https://paybaack.com,https://www.paybaack.com"
+MODEL = "claude-haiku-4-5-20251001"
+
+# 20 messages per minute per visitor IP. Remove this block if your account
+# doesn't support the rate-limiting binding; the Worker runs without it.
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1001"
+simple = { limit = 20, period = 60 }
+
+[observability]
+enabled = true
+
+# Set the API key as a secret (never commit it):
+#   npx wrangler secret put ANTHROPIC_API_KEY
