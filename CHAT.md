@@ -30,12 +30,12 @@ Grace answers visitors' general questions on paybaack.com **only from `faq.json`
    npx wrangler secret put ANTHROPIC_API_KEY   # paste the key
    npx wrangler deploy
    ```
-   Wrangler prints a URL like `https://paybaack-grace.<your-subdomain>.workers.dev`.
+   Wrangler prints a URL like `https://paybaack-grace.grehce.workers.dev`.
 3. **Point the widget at it:** in `index.html` and `ap.html`, replace `YOUR-SUBDOMAIN` in the `data-endpoint` attribute with your subdomain. Until you do, the widget stays hidden, so pushing early is safe.
 4. **Push** to GitHub. Pages serves `faq.json` and the widget.
 5. **Run the tests:**
    ```bash
-   node evals/run.mjs https://paybaack-grace.<your-subdomain>.workers.dev/chat
+   node evals/run.mjs https://paybaack-grace.grehce.workers.dev/chat
    ```
    All 32 should pass. If a test fails after you edit the FAQ, either the FAQ needs a clearer entry or the test needs updating.
 
