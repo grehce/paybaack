@@ -41,6 +41,18 @@
       "answer": "Our initial focus is small US field-service and equipment-installation businesses, such as elevator, HVAC, fire and life-safety, security, and commercial equipment companies, that bill commercial customers like building owners, property managers, and facilities teams directly. The best fit is an overdue invoice with a clear balance, a named customer contact, a payment path, and no active dispute."
     },
     {
+      "id": "pricing",
+      "question": "How much does PAYBAACK cost?",
+      "alt_phrasings": [
+        "pricing",
+        "what's the fee",
+        "is there a free trial",
+        "do I pay if you don't collect",
+        "what percentage do you take"
+      ],
+      "answer": "New customers can start with a trial: if we don't get anything back for you, you pay nothing. For pricing details beyond the trial, email hello@paybaack.com and we'll be happy to help."
+    },
+    {
       "id": "consumer-debt",
       "question": "Do you collect consumer debt?",
       "alt_phrasings": [
