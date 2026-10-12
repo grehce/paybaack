@@ -17,7 +17,7 @@
 
 ## Best fit
 
-US B2B service businesses with an overdue invoice that has a clear balance, named customer contact, payment path, and no active dispute.
+Initial focus: small US field-service and equipment-installation businesses (for example elevator, HVAC, fire and life-safety, security, and commercial equipment companies) that bill commercial customers such as building owners, property managers, and facilities teams directly. Best fit within that: an overdue invoice with a clear balance, named customer contact, payment path, and no active dispute.
 
 ## Private-beta intake
 

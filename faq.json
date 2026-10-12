@@ -31,9 +31,14 @@
       "alt_phrasings": [
         "is this right for my business",
         "best fit",
-        "what kind of companies"
+        "what kind of companies",
+        "do you work with HVAC companies",
+        "elevator companies",
+        "field service businesses",
+        "contractors",
+        "is this for my industry"
       ],
-      "answer": "The best fit is a US B2B service business with an overdue invoice that has a clear balance, a named customer contact, a payment path, and no active dispute."
+      "answer": "Our initial focus is small US field-service and equipment-installation businesses, such as elevator, HVAC, fire and life-safety, security, and commercial equipment companies, that bill commercial customers like building owners, property managers, and facilities teams directly. The best fit is an overdue invoice with a clear balance, a named customer contact, a payment path, and no active dispute."
     },
     {
       "id": "consumer-debt",
